@@ -1,9 +1,15 @@
 platform: x64
 
+skip_tags: true
+
+cache:
+  - C:\strawberry
+
 install:
-  - path C:\MinGW\bin;C:\Perl\site\bin;C:\Perl\bin;C:\Windows\System32;C:\Program Files\7-Zip;C:\Program Files (x86)\CMake\bin;C:\Program Files\AppVeyor\BuildAgent
-  - cpan App::cpanminus ExtUtils::MakeMaker
-  - cpanm --installdeps --notest  .
+  - cmd: if not exist "C:\strawberry" cinst strawberryperl
+  - cmd: set PATH=C:\strawberry\perl\bin;C:\strawberry\perl\site\bin;C:\strawberry\c\bin;%PATH%
+  - cmd: cd %APPVEYOR_BUILD_FOLDER%
+  - cpanm --installdeps --notest --quiet .
 
 test_script:
   - prove -Ilib -m -v
