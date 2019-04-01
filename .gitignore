@@ -9,3 +9,5 @@
 /cover_db/
 /*.tar.gz
 /_Deparsed_XSubs.pm
+*.lock
+*.bak

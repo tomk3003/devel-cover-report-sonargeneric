@@ -1,5 +1,6 @@
 install:
   - path C:\MinGW\bin;C:\Perl\site\bin;C:\Perl\bin;C:\Windows\System32;C:\Program Files\7-Zip;C:\Program Files (x86)\CMake\bin;C:\Program Files\AppVeyor\BuildAgent
+  - cpanm --installdeps --notest  .
 
 test_script:
   - prove -Ilib -m -v

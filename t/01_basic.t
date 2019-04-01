@@ -14,6 +14,7 @@ unlink $rfn if -e $rfn;
 
 ok(! -e $rfn, 'start fresh');
 
+$ENV{DEVEL_COVER_DB_FORMAT} = 'JSON';
 system('cover -report SonarGeneric');
 
 ok(-e $rfn, 'report generated');

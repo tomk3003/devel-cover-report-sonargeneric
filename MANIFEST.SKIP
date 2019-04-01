@@ -1,6 +1,7 @@
 
 ^\.
 .*\.bak$
+.*\.lock$
 \.tar\.gz$
 ^Makefile$
 ^MYMETA\.
