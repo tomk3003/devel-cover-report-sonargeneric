@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use Path::Tiny qw(path);
 
-our $VERSION = '0.1';
+our $VERSION = '0.2';
 
 sub report {
     my ($pkg, $db, $options) = @_;
@@ -13,7 +13,6 @@ sub report {
 
     my $otxt = qq(<coverage version="1">\n);
     for my $file ( @{ $options->{file} } ) {
-
         my $f  = $cover->file($file);
         my $st = $f->statement;
         my $br = $f->branch;
@@ -49,3 +48,36 @@ sub report {
 }
 
 1;
+
+__END__
+
+=pod
+
+=head1 NAME
+
+Devel::Cover::Report::SonarGeneric - SonarQube generic backend for Devel::Cover
+
+=head1 SYNOPSIS
+
+    > cover -report SonarGeneric
+
+=head1 DESCRIPTION
+
+This module generates an XML file suitable for import into SonarQube from an existing
+Devel::Cover database.
+
+It is designed to be called from the C<cover> program distributed with L<Devel::Cover>.
+
+The output file will be C<cover_db/sonar_generic.xml>.
+
+To upload the file to SonarQube you have to put a line of
+
+    sonar.coverageReportPaths=cover_db/sonar_generic.xml
+
+into your C<sonar-project.properties> file.
+
+=head1 AUTHOR
+
+Thomas Kratz E<lt>tomk@cpan.orgE<gt>
+
+=cut
