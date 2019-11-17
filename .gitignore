@@ -6,8 +6,9 @@
 /MYMETA.yml
 /Makefile
 /pm_to_blib
-/cover_db/
 /*.tar.gz
 /_Deparsed_XSubs.pm
 *.lock
 *.bak
+/*.tar
+/cover_db/
