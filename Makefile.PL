@@ -19,7 +19,7 @@ WriteMakefile(
     },
     no_index => {directory => ['t']}
   },
-  BUILD_REQUIRES => {
+  CONFIGURE_REQUIRES => {
     "ExtUtils::MakeMaker" => "6.64",
   },
   PREREQ_PM => {
