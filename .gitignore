@@ -12,3 +12,4 @@
 *.bak
 /*.tar
 /cover_db/
+/t/cover_db/sonar_generic.xml
