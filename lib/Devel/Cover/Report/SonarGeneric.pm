@@ -4,7 +4,7 @@ use strict;
 use warnings;
 use Path::Tiny qw(path);
 
-our $VERSION = '0.6';
+our $VERSION = '0.7';
 
 sub report {
     my ($pkg, $db, $options) = @_;
